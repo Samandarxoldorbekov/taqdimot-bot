@@ -1,0 +1,9 @@
+logging
+asyncio
+requests
+beautifulsoup4
+aiogram
+deep-translator
+fpdf
+python-pptx
+google-generativeai
