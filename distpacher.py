@@ -8,35 +8,27 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
-from taqdimot import taqdimot_gen
+
 from profil import profel_as
-from aiogram.fsm.state import State, StatesGroup
+
 
 dp = Dispatcher()
 menu = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text="taqdimot yaratish"), KeyboardButton(text="Profil")],
+        [KeyboardButton(text="taqdimot yaratish"), KeyboardButton(text="Profil")], 
+        [KeyboardButton(text="Aturentlar uchun"), KeyboardButton(text="Qo'shimcha hizmatlar")], 
+        
         
     ],
     resize_keyboard=True  # Tugmalar ekran o‘lchamiga moslashadi
 )
-
-
-class PresentationForm(StatesGroup):
-    topic_language = State()
-    topic = State()
-    pages = State()
-    file_format = State()
-    photo = State()
-
-
 @dp.message(CommandStart())
 async def command_start_handler(message: Message) -> None:
     await message.answer("Asalomu alaykum kerkli bo'limni tanlang 👇", reply_markup=menu)
 
 @dp.message(F.text == "taqdimot yaratish")
 async def settings_handler(message: types.Message):
-    
+    await message.answer("taqdimot yaratishni boshlaymiz")
 
 @dp.message(F.text == "Profil")
 async def settings_handler(message: types.Message):
